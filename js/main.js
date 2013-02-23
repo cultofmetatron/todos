@@ -4,6 +4,7 @@ requirejs.config({
                Underscore:'/js/libs/underscore',
                Modernizr: '/js/libs/modernizr',
                Backbone: '/js/libs/backbone',
+               Localstorage: '/js/libs/backbone.localStorage',
                Handlebars: '/js/libs/handlebars',
                text: '/js/libs/text',
                cs: '/js/libs/cs',
@@ -11,9 +12,9 @@ requirejs.config({
            },
     shim: {
                 Modernizr:['jQuery'],
-                Backbone: ['jQuery', 'Underscore', 'Handlebars'],
+                Backbone: ['jQuery', 'Underscore', 'Handlebars', 'Modernizr'],
+                Localstorage: ["Backbone"],
                 Application: ['Backbone']
-
            }
 })
 

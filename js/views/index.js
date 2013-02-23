@@ -1,5 +1,7 @@
-define(['text!templates/index.hbs', 'js/views/todoitem'],
+define(['text!templates/index.hbs'],
         function(indexTemplate, TodoItemView) {
+
+
     var IndexView = Backbone.View.extend({
         el:$('body'),
         render:function() {

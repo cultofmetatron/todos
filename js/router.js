@@ -1,4 +1,4 @@
-define(['views/index'], function(IndexView) {
+define(['views/index', 'views/todoitem'], function(IndexView, TodoItemView ) {
 
     //declare the router
     var router = Backbone.Router.extend({
@@ -15,9 +15,12 @@ define(['views/index'], function(IndexView) {
             this.currentView.render();
         },
         index: function() {
-            indexView = new IndexView();
+            var indexView = new IndexView();
             this.changeView(indexView);
-
+            console.log("right after the index is rendered");
+            console.log($('#todos > ul.todoList').html()); //this correctly loads the updated dom
+            var todoItemView = new TodoItemView();//this access the OLD one??
+            todoItemView.render();
         },
 
 
