@@ -1,18 +1,14 @@
-web-boot
+Todos-app
 ========
 
-project skeleton to build web design frontends
+this app, will be a basic nononsense implementation of a todo app
 
-this repo is just a quick checklist of stuff to
-throw into a rich web application.
+todo:
 
-TODOS
-
-
-stock version should include copious comments and
-explanations on where to find further information
+    1. it would be soo meta if I could use this todo app
+    to track the development of itself. MATHEMATICAL!
 
 
-*stylesheets powered by skeleton*
+
 
 

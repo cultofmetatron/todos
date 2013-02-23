@@ -15,9 +15,14 @@ define(['views/index'], function(IndexView) {
             this.currentView.render();
         },
         index: function() {
-            this.changeView(new IndexView())
-            console.log('index called');
-        }
+            indexView = new IndexView();
+            this.changeView(indexView);
+
+        },
+
+
+
+
 
 
     })
