@@ -18,6 +18,7 @@ requirejs.config({
 })
 
 require(['Application'], function(app) {
-    app.init();
-   // alert('hello');
+   $(document).ready(function() {
+       app.init();
+   });
 })
