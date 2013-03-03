@@ -7,6 +7,7 @@ define(function() {
             //by default, todoitems should be unchecked
             checked: false,
             title: "",
+            order: 0,
         }
     });
 
