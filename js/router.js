@@ -15,8 +15,9 @@ define(['views/index', 'views/todoitem'], function(IndexView, TodoItemView ) {
             this.currentView.render();
         },
         loadTodos:function() {
+            console.log('in loadTodos');
             var todoItemView = new TodoItemView();
-            todoItem.render();
+            todoItemView.render();
 
         },
         index: function() {
