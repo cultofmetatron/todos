@@ -1,4 +1,5 @@
-define(['views/index', 'views/todoitem'], function(IndexView, TodoItemView ) {
+define(['views/index', 'views/todoitem', 'views/create-todoitem'],
+        function(IndexView, TodoItemView, CreateTodoView ) {
 
     //declare the router
     var router = Backbone.Router.extend({
@@ -20,12 +21,17 @@ define(['views/index', 'views/todoitem'], function(IndexView, TodoItemView ) {
             todoItemView.render();
 
         },
+        loadCreateForm:function() {
+            var createTodoView = new CreateTodoView();
+            createTodoView.render();
+        },
         index: function() {
             var indexView = new IndexView();
             this.changeView(indexView);
             console.log("right after the index is rendered");
             console.log($('#todos > ul.todoList').html()); //this correctly loads the updated dom
             this.loadTodos();
+            this.loadCreateForm();
         },
 
 
