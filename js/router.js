@@ -25,6 +25,10 @@ define(['views/index', 'views/todoitem', 'views/create-todoitem'],
             var createTodoView = new CreateTodoView();
             createTodoView.render();
         },
+        refresh-index: function() {
+
+
+        },
         index: function() {
             var indexView = new IndexView();
             this.changeView(indexView);
