@@ -5,10 +5,14 @@ define(['router'], function(appRouter) {
         Backbone.history.start({pushState: true});
         appRouter.navigate('index', {trigger: true});
 
+        //should be triggering the event
+        /*
         window.onpopstate = function(event) {
-            console.log("popstate event triggerred");
-            console.log(event.state);
+            console.log(event);
         }
+        */
+
+
     }
 
 

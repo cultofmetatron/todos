@@ -21,5 +21,6 @@ requirejs.config({
 require(['application'], function(app) {
    $(document).ready(function() {
        app.init();
+
    });
 })
