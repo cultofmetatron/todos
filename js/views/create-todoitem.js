@@ -11,9 +11,10 @@ define(['text!templates/_create-todo.hbs'], function(createTodoTemplate) {
         events: {
             'click a#add-todo': function(e) {
                 e.preventDefault();
-                window.location.hash = 'add-todo';
+                //window.location.hash = 'add-todo';
                 //doesn't work. should ask shawn about this
-                //window.history.pushState({foo:"bar"}, "add a Todo", "/add-todo" );
+                //lets try this while adding an eventhandler for popstate
+                window.history.pushState("add-todo", "add a Todo", "/add-todo" );
 
             },
 
