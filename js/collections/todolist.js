@@ -5,7 +5,5 @@ define(['models/todoitem'], function(TodoItem) {
 
     })
 
-
-
-
+    return TodoCollection;
 })

@@ -1,5 +1,5 @@
-define(['views/index', 'views/todoitem', 'views/create-todoitem'],
-function(IndexView,    TodoItemView,      CreateTodoView ) {
+define(['views/index', 'views/todolist', 'views/create-todoitem', 'fixtures/todos'],
+function(IndexView,    TodoListView,      CreateTodoView , todoFixtures) {
 
     //declare the router
     var router = Backbone.Router.extend({
@@ -16,10 +16,16 @@ function(IndexView,    TodoItemView,      CreateTodoView ) {
             this.currentView.render();
         },
         loadTodos:function() {
-            console.log('in loadTodos');
-            var todoItemView = new TodoItemView();
-            todoItemView.render();
-
+            var todoListView = new TodoListView({
+                collection:todoFixtures,
+            });
+            console.log(todoListView);
+            todoListView.render();
+            /*
+            todoFixtures.forEach(function(item) {
+                console.log(item.get('title'));
+            })
+            */
         },
         loadCreateForm:function() {
             var createTodoView = new CreateTodoView();

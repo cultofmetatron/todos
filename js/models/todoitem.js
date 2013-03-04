@@ -1,5 +1,5 @@
 define(function() {
-    var TodoItem = Backbone.model.extend({
+    var TodoItem = Backbone.Model.extend({
         initialize:function() {
             //initialize here
         },
@@ -8,7 +8,7 @@ define(function() {
             checked: false,
             title: "default",
             order: 0,
-        }
+        },
     });
 
 
