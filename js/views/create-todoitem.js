@@ -11,8 +11,10 @@ define(['text!templates/_create-todo.hbs'], function(createTodoTemplate) {
         events: {
             'click a#add-todo': function(e) {
                 e.preventDefault();
-                console.log('cick event triggerred');
-                window.history.pushState({foo:"bar"}, "create todo", "/add-todo");
+                window.location.hash = 'add-todo';
+                //doesn't work. should ask shawn about this
+                //window.history.pushState({foo:"bar"}, "add a Todo", "/add-todo" );
+
             },
 
         }

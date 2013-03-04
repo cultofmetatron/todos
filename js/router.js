@@ -32,7 +32,7 @@ function(IndexView,    TodoItemView,      CreateTodoView ) {
         addTodo: function() {
             // add todo to collection and refresh the list
             console.log('addTodo logic executed!!');
-            $(body).html("<h1>hello</h1>");
+            this.navigate('index');
         },
 
         index: function() {
