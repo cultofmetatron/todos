@@ -6,7 +6,7 @@ define(function() {
         defaults: {
             //by default, todoitems should be unchecked
             checked: false,
-            title: "",
+            title: "default",
             order: 0,
         }
     });

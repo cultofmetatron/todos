@@ -9,16 +9,17 @@ define(['text!templates/_create-todo.hbs'], function(createTodoTemplate) {
             this.$el.html(compiledTemplate);
         },
         events: {
-            'click a#add-todo': function(e) {
+            'click a#add-todo': 'addTodo'
+        },
+        addTodo: function(e) {
                 e.preventDefault();
+                console.log('clicked trigegred action fo');
                 //yess!! this seems to work
                 history.pushState({action:"add-todo"}, "add a Todo", "/add-todo" );
                 //pushState by sitself doesn't trigger so I do it explicitly here
                 $(window).trigger('popstate');
-            },
-
-        }
-    })
+        },
+   })
 
     return createTodoView;
 
