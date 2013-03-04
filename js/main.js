@@ -14,11 +14,11 @@ requirejs.config({
                 Modernizr:['jQuery'],
                 Backbone: ['jQuery', 'Underscore', 'Handlebars', 'Modernizr'],
                 Localstorage: ["Backbone"],
-                Application: ['Backbone']
+                application: ['Backbone']
            }
 })
 
-require(['Application'], function(app) {
+require(['application'], function(app) {
    $(document).ready(function() {
        app.init();
    });

@@ -5,8 +5,8 @@ define(['views/index', 'views/todoitem', 'views/create-todoitem'],
     var router = Backbone.Router.extend({
         currentView: null,
         routes: {
-                    'index':'index'
-
+                    'index':'index',
+                    'add-todo':'addTodo'
                 },
         changeView: function(newView) {
             if(this.currentView != null) {
@@ -25,15 +25,22 @@ define(['views/index', 'views/todoitem', 'views/create-todoitem'],
             var createTodoView = new CreateTodoView();
             createTodoView.render();
         },
-        refresh-index: function() {
+        refreshIndex: function() {
 
 
         },
+        addTodo: function() {
+            // add todo to collection and refresh the list
+            console.log('addTodo logic executed!!');
+        },
+
         index: function() {
             var indexView = new IndexView();
-            this.changeView(indexView);
+
             console.log("right after the index is rendered");
-            console.log($('#todos > ul.todoList').html()); //this correctly loads the updated dom
+            this.changeView(indexView);
+
+
             this.loadTodos();
             this.loadCreateForm();
         },
