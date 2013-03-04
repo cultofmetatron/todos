@@ -1,5 +1,5 @@
 define(['views/index', 'views/todoitem', 'views/create-todoitem'],
-        function(IndexView, TodoItemView, CreateTodoView ) {
+function(IndexView,    TodoItemView,      CreateTodoView ) {
 
     //declare the router
     var router = Backbone.Router.extend({
@@ -32,6 +32,7 @@ define(['views/index', 'views/todoitem', 'views/create-todoitem'],
         addTodo: function() {
             // add todo to collection and refresh the list
             console.log('addTodo logic executed!!');
+            $(body).html("<h1>hello</h1>");
         },
 
         index: function() {
@@ -43,6 +44,7 @@ define(['views/index', 'views/todoitem', 'views/create-todoitem'],
 
             this.loadTodos();
             this.loadCreateForm();
+
         },
 
 
