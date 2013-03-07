@@ -1,4 +1,5 @@
-define(['text!templates/_create-todo.hbs'], function(createTodoTemplate) {
+define(['text!templates/_create-todo.hbs'],
+        function(createTodoTemplate) {
     var createTodoView = Backbone.View.extend({
         el:function(){
                return $('#todos > div.create');
@@ -14,6 +15,12 @@ define(['text!templates/_create-todo.hbs'], function(createTodoTemplate) {
         addTodo: function(e) {
                 e.preventDefault();
                 console.log('clicked trigegred action fo');
+                var todoTask = {
+                    title:$('input[name=task]').val(),
+                    checked: false,
+                    order: 0,
+                };
+                this.collection.add(todoTask);
                 //yess!! this seems to work
                 history.pushState({action:"add-todo"}, "add a Todo", "/add-todo" );
                 //pushState by sitself doesn't trigger so I do it explicitly here

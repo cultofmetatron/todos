@@ -1,9 +1,10 @@
-define(['views/index', 'views/todolist', 'views/create-todoitem', 'fixtures/todos'],
-function(IndexView,    TodoListView,      CreateTodoView , todoFixtures) {
+define(['views/index', 'collections/todoList' ,'views/todolist', 'views/create-todoitem', 'fixtures/todos'],
+function(IndexView, TodoItem  , TodoListView,      CreateTodoView , todoFixtures) {
 
     //declare the router
     var router = Backbone.Router.extend({
         currentView: null,
+        todoList: todoFixtures,
         routes: {
                     'index':'index',
                     'add-todo':'addTodo'
@@ -16,9 +17,10 @@ function(IndexView,    TodoListView,      CreateTodoView , todoFixtures) {
             this.currentView.render();
         },
         loadTodos:function() {
-            var todoListView = new TodoListView({
-                collection:todoFixtures,
-            });
+            //this.todoListView.collection.add(todoFixtures);
+            todoListView = new TodoListView({
+                collection: this.todoList,
+            })
             console.log(todoListView);
             todoListView.render();
             /*
@@ -37,6 +39,7 @@ function(IndexView,    TodoListView,      CreateTodoView , todoFixtures) {
         },
         addTodo: function() {
             // add todo to collection and refresh the list
+
             console.log('addTodo logic executed!!');
             this.navigate('index');
         },
