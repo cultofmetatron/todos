@@ -21,6 +21,11 @@ define(['text!templates/_create-todo.hbs'],
                     order: 0,
                 };
                 this.collection.add(todoTask);
+                this.collection.forEach(function(item) {
+                    console.log(item.get('title'));
+                    console.log(item.attributes);
+
+                })
                 //yess!! this seems to work
                 history.pushState({action:"add-todo"}, "add a Todo", "/add-todo" );
                 //pushState by sitself doesn't trigger so I do it explicitly here

@@ -1,7 +1,10 @@
 define(['collections/todolist', 'models/todoitem'] ,
 function(TodoList, TodoItem) {
     //returns an explicit collection of todos
-    var todoList = new TodoList([
+    console.log(TodoList);
+    var todoList = TodoList;
+
+    todoList.add([
         //fixtures of items
         {title:"first item", checked: false, order: 0},
         {title: "snakes on a plane mofo", checked: true, order: 0},

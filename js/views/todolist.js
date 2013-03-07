@@ -4,7 +4,7 @@ define(['views/todoitem'], function(TodoItemView) {
             return $('div#todos > ul.todoList');
         },
         render: function() {
-            console.log("in todolist view render");
+            this.$el.empty();
             this.collection.forEach(function(todoItem) {
                 var todoItemView = new TodoItemView({
                     model:todoItem,
@@ -17,7 +17,6 @@ define(['views/todoitem'], function(TodoItemView) {
         },
 
     });
-    console.log('what the deuce?');
     return TodoListView;
 
 });

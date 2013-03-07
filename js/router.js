@@ -1,9 +1,12 @@
-define(['views/index', 'collections/todoList' ,'views/todolist', 'views/create-todoitem', 'fixtures/todos'],
-function(IndexView, TodoItem  , TodoListView,      CreateTodoView , todoFixtures) {
+define(['views/index', 'views/todolist', 'views/create-todoitem', 'fixtures/todos' ],
+function(IndexView, TodoListView,      CreateTodoView , todoFixtures) {
 
     //declare the router
     var router = Backbone.Router.extend({
         currentView: null,
+        //getTodoListFromLocal: function() {
+        //    return todoFixtures;
+        //},
         todoList: todoFixtures,
         routes: {
                     'index':'index',
@@ -30,7 +33,9 @@ function(IndexView, TodoItem  , TodoListView,      CreateTodoView , todoFixtures
             */
         },
         loadCreateForm:function() {
-            var createTodoView = new CreateTodoView();
+            var createTodoView = new CreateTodoView({
+                collection:this.todoList,
+            });
             createTodoView.render();
         },
         refreshIndex: function() {
@@ -39,7 +44,7 @@ function(IndexView, TodoItem  , TodoListView,      CreateTodoView , todoFixtures
         },
         addTodo: function() {
             // add todo to collection and refresh the list
-
+            this.loadTodos();
             console.log('addTodo logic executed!!');
             this.navigate('index');
         },
