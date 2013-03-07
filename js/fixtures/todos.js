@@ -11,6 +11,8 @@ function(TodoList, TodoItem) {
         {title: "god yes, its another list item!! ok!!", checked:true, order: 0},
     ]);
 
+    //todoList.sync();
+
 
 
     return todoList;
