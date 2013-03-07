@@ -1,21 +1,23 @@
 requirejs.config({
     paths: {
-               jQuery:'/js/libs/jquery-1.9.1',
-               Underscore:'/js/libs/underscore',
-               Modernizr: '/js/libs/modernizr',
-               Backbone: '/js/libs/backbone',
-               localstorage: '/js/libs/backbone-localstorage',
-               Handlebars: '/js/libs/handlebars',
+               jquery:'/js/libs/jquery-1.9.1',
+               underscore:'/js/libs/underscore',
+               modernizr: '/js/libs/modernizr',
+               backbone: '/js/libs/backbone',
+               localstorage: '/js/libs/backbone.localStorage',
+               handlebars: '/js/libs/handlebars',
                text: '/js/libs/text',
                cs: '/js/libs/cs',
                templates:'/templates'
            },
+
     shim: {
-                Modernizr:['jQuery'],
-                Backbone: ['jQuery', 'Underscore', 'Handlebars', 'Modernizr'],
+                modernizr:['jquery'],
+                backbone: ['jquery', 'underscore', 'handlebars', 'modernizr'],
                 //Localstorage: ["Backbone"],
-                application: [ 'Backbone'],
+                application: [ 'backbone'],
            }
+
 })
 
 require(['application'], function(app) {
