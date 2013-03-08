@@ -10,22 +10,21 @@ define(['text!templates/_create-todo.hbs'],
             this.$el.html(compiledTemplate);
         },
         events: {
-            'click a#add-todo': 'addTodo'
+            'click a#add-todo': 'addTodo',
+            'submit #create-todo': 'addTodo',
         },
         addTodo: function(e) {
                 e.preventDefault();
                 console.log('clicked trigegred action fo');
-                var todoTask = {
-                    title:$('input[name=task]').val(),
+                var todoTask =  {
+                    title:this.$el.find('input[name=task]').val(),
                     checked: false,
                     order: 0,
                 };
                 this.collection.add(todoTask);
-                this.collection.forEach(function(item) {
-                    console.log(item.get('title'));
-                    console.log(item.attributes);
+                this.collection.saveAll();
 
-                })
+
                 //yess!! this seems to work
                 history.pushState({action:"add-todo"}, "add a Todo", "/add-todo" );
                 //pushState by sitself doesn't trigger so I do it explicitly here
