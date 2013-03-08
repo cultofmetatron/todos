@@ -2,10 +2,13 @@
     <div class="one columns">
         <input type="checkbox"
             {{#if checked}}
-                checked="checked"
+                checked
             {{/if}}>
     </div>
     <div class="fourteen columns">
         <p>{{ title  }}</p>
+        <p class="actions">
+            <a href="#" class="destroy">delete task</a>
+        </p>
     </div>
 </li>

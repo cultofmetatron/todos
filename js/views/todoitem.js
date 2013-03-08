@@ -12,8 +12,17 @@ define(['text!templates/_todo.hbs'], function(todoTemplate) {
             }
             var compiledTemplate = Handlebars.compile(todoTemplate);
             var contextualized = compiledTemplate(context);
+            console.log(this.el);
             this.$el.append(contextualized);
             //return contextualized;
+        },
+        events: {
+            'click a.destroy': "destructo",
+
+        },
+        destructo:function(e) {
+            e.preventDefault();
+            console.log('hello');
         }
 
     })
