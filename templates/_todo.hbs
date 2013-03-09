@@ -1,4 +1,4 @@
-<li id="{{ident}}">
+<li id="{{ident}}" >
     <div class="one columns">
         <input type="checkbox"
             {{#if checked}}
@@ -6,7 +6,7 @@
             {{/if}}>
     </div>
     <div class="fourteen columns">
-        <p>{{ title  }}</p>
+        <p  class=" info {{#if checked}} done {{/if}}">{{ title }}</p>
         <p class="actions">
             <a href="#" class="destroy">delete task</a>
         </p>

@@ -23,7 +23,7 @@ define(['text!templates/_create-todo.hbs'],
                 };
                 this.collection.add(todoTask);
                 this.collection.saveAll();
-
+                this.$el.find('input[name=task]').val('');
 
                 //yess!! this seems to work
                 history.pushState({action:"add-todo"}, "add a Todo", "/add-todo" );
